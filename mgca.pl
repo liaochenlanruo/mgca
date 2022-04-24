@@ -7,7 +7,7 @@ my $VERSION = "0.0.0";
 my $EXE = "mgca";
 
 # Command line options
-my(@Options, $help, $PI, $aa_suffix, $AAsPath);
+my(@Options, $help, $PI, $aa_suffix, $AAsPath, $IS, $gbkPath, $gbk_suffix);
 setOptions();
 
 # Option setting routines
@@ -20,9 +20,13 @@ sub setOptions {
     {OPT=>"citation",   VAR=>\&show_citation,       DESC=>"Print citation for referencing Prokka"},
     "MODULES",
     {OPT=>"PI",         VAR=>\$PI,                  DESC=>"Calculate statistics of protein properties and print pI of all protein sequences"},
+    {OPT=>"IS",         VAR=>\$IS,                  DESC=>"Predict genomic island from GenBank files"},
     "Parameters of PI",
     {OPT=>"AAsPath=s",     VAR=>\$AAsPath, DEFAULT=>'',             DESC=>"Amino acids of all strains as fasta file paths"},
-    {OPT=>"aa_suffix=s",   VAR=>\$aa_suffix, DEFAULT=>'.faa',             DESC=>"Specify the suffix of input files"},
+    {OPT=>"aa_suffix=s",   VAR=>\$aa_suffix, DEFAULT=>'.faa',             DESC=>"Specify the suffix of Protein sequence files"},
+    "Parameters of IS",
+    {OPT=>"gbkPath=s",     VAR=>\$gbkPath, DEFAULT=>'',             DESC=>"GenBank file path"},
+    {OPT=>"gbk_suffix=s",   VAR=>\$gbk_suffix, DEFAULT=>'.gbk',             DESC=>"Specify the suffix of GenBank files"},
   );
   @ARGV or usage(1);
 
@@ -60,6 +64,8 @@ sub usage {
   print "COMMANDS\n";
   print "# Module PI: Calculate statistics of protein properties and print pI of all protein sequences\n";
   print "  $EXE --PI --AAsPath <PATH> --aa_suffix <.faa>\n";
+  print "# Module IS: Predict genomic island from GenBank files\n";
+  print "  $EXE --IS --gbkPath <PATH> --gbk_suffix <.gbk>\n";
   exit($exitcode);
 }
 
@@ -84,9 +90,26 @@ if ($PI) {
 	chdir $working_dir;
 }
 
-# cp ../mgca.pl /home/liu/miniconda3/envs/mgca/bin/mgca
-# chmod a+x /home/liu/miniconda3/envs/mgca/bin/mgca
 
+# ======================== Module IS =============
+if ($IS) {
+	system("mkdir -p $working_dir/Results/IS/TEMP/");
+	chdir $gbkPath;
+	system("run_islandpath.pl --gbk_suffix $gbk_suffix");
+	system("rm -rf dimob_tmp*");
+	system("mv All_island.list All_island.txt Dimob.log $working_dir/Results/IS/");
+	system("mv *.gb *.island *.list $working_dir/Results/IS/TEMP/");
+	chdir $working_dir;
+}
+# cp mgca.pl /home/liu/miniconda3/envs/mgca/bin/mgca
+# cp Scripts/pI/print_pI.pl /home/liu/miniconda3/envs/mgca/bin/
+# cp Scripts/pI/plot_pI.R /home/liu/miniconda3/envs/mgca/bin/
+# cp Scripts/IS/run_islandpath.pl /home/liu/miniconda3/envs/mgca/bin/
+
+# chmod a+x /home/liu/miniconda3/envs/mgca/bin/mgca
+# chmod a+x /home/liu/miniconda3/envs/mgca/bin/print_pI.pl
+# chmod a+x /home/liu/miniconda3/envs/mgca/bin/plot_pI.R
+# chmod a+x /home/liu/miniconda3/envs/mgca/bin/run_islandpath.pl
 
 
 
