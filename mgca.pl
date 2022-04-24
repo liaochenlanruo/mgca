@@ -101,6 +101,10 @@ if ($IS) {
 	system("mv *.gb *.island *.list $working_dir/Results/IS/TEMP/");
 	chdir $working_dir;
 }
+
+# ======================== Module prophage =============
+
+
 # cp mgca.pl /home/liu/miniconda3/envs/mgca/bin/mgca
 # cp Scripts/pI/print_pI.pl /home/liu/miniconda3/envs/mgca/bin/
 # cp Scripts/pI/plot_pI.R /home/liu/miniconda3/envs/mgca/bin/
