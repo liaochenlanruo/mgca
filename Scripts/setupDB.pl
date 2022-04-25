@@ -72,9 +72,11 @@ if ($all or $pVOG) {
 	if ($DBpath) {
 		system("mv pVOGs.hmm $DBpath");
 		system("hmmpress -f $DBpath/pVOGs.hmm");
+		system("chmod a+x $DBpath/pVOGs.*");
 	}else {
 		system("mv pVOGs.hmm $mgca_dir");
 		system("hmmpress -f $mgca_dir/pVOGs.hmm");
+		system("chmod a+x $mgca_dir/pVOGs.*");
 	}
 	system("rm -rf AllvogHMMprofiles AllvogHMMprofiles.tar.gz");
 }
