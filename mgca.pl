@@ -116,6 +116,8 @@ if ($PROPHAGE) {
 	system("mkdir -p $working_dir/Results/PROPHAGE/");
 	chdir $gbkPath;
 	system("run_PhiSpy.pl --gbk_suffix $gbk_suffix --phmms $phmms --phage_genes $phage_genes --min_contig_size $min_contig_size --threads $threads");
+	system("mv *_prophage All.prophages.* $working_dir/Results/PROPHAGE/");
+	chdir $working_dir;
 }
 
 # cp mgca.pl /home/liu/miniconda3/envs/mgca/bin/mgca
