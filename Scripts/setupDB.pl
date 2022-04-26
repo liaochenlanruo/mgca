@@ -91,7 +91,7 @@ cat cas[2-9].fasta cas1[0-2].fasta casphi.fasta | makeblastdb -dbtype prot -titl
 # Use Gene Finder to search for CRISPR-Cas loci
 mkdir example_1_output
 
-## uses Opfi¡¯s gene_finder.pipeline module to search for CRISPR-Cas systems
+## uses Opfi's gene_finder.pipeline module to search for CRISPR-Cas systems
 python run_genefinder.py
 
 ## Visualize annotated CRISPR-Cas gene clusters with Operon Analyzer
