@@ -40,6 +40,7 @@ requirements:
     - eggnog-mapper
     - r-ggplot2
     - wget
+    - openjdk
 
 test:
   commands:
