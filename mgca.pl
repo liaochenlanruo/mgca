@@ -14,7 +14,7 @@ if ($bin=~/(.+)\/mgca/) {
 }
 
 # Command line options
-my(@Options, $help, $PI, $PROPHAGE, $aa_suffix, $AAsPath, $IS, $gbkPath, $gbk_suffix, $phmms, $min_contig_size, $phage_genes, $threads);
+my(@Options, $help, $PI, $PROPHAGE, $aa_suffix, $AAsPath, $IS, $gbkPath, $gbk_suffix, $phmms, $min_contig_size, $phage_genes, $scafPath, $scaf_suffix, $threads);
 setOptions();
 
 # Option setting routines
@@ -42,6 +42,9 @@ sub setOptions {
     {OPT=>"min_contig_size=i",   VAR=>\$min_contig_size, DEFAULT=>"5000",     DESC=>"Minimum contig size (in bp) to be included in the analysis. Smaller contigs will be dropped"},
     {OPT=>"phage_genes=i",   VAR=>\$phage_genes, DEFAULT=>"1",                DESC=>"The minimum number of genes that must be identified as belonging to a phage for the region to be included"},
     {OPT=>"threads=i",      VAR=>\$threads, DEFAULT=>'6',                     DESC=>"Number of threads to use"},
+    "\nParameters of CRISPR",
+    {OPT=>"scafPath=s",      VAR=>\$scafPath, DEFAULT=>'',                    DESC=>"Genome/Scaffolds/Contigs file path"},
+    {OPT=>"scaf_suffix=s",   VAR=>\$scaf_suffix, DEFAULT=>'.fa',              DESC=>"Specify the suffix of Genome/Scaffolds/Contigs files"},
   );
   @ARGV or usage(1);
 
@@ -125,13 +128,19 @@ if ($PROPHAGE) {
 # cp Scripts/pI/plot_pI.R /home/liu/miniconda3/envs/mgca/bin/
 # cp Scripts/IS/run_islandpath.pl /home/liu/miniconda3/envs/mgca/bin/
 # cp Scripts/PROPHAGE/run_PhiSpy.pl /home/liu/miniconda3/envs/mgca/bin/
+# cp Scripts/CRISPR/run_opfi.py /home/liu/miniconda3/envs/mgca/bin/
+# cp Scripts/CRISPR/db/cas_all_* /home/liu/miniconda3/envs/mgca/bin/
+# cp Scripts/CRISPR/db/cas1_db.* /home/liu/miniconda3/envs/mgca/bin/
+
 
 # chmod a+x /home/liu/miniconda3/envs/mgca/bin/mgca
 # chmod a+x /home/liu/miniconda3/envs/mgca/bin/print_pI.pl
 # chmod a+x /home/liu/miniconda3/envs/mgca/bin/plot_pI.R
 # chmod a+x /home/liu/miniconda3/envs/mgca/bin/run_islandpath.pl
 # chmod a+x /home/liu/miniconda3/envs/mgca/bin/run_PhiSpy.pl
-
+# chmod a+x /home/liu/miniconda3/envs/mgca/bin/run_opfi.py
+# chmod a+x /home/liu/miniconda3/envs/mgca/bin/cas_all_*
+# chmod a+x /home/liu/miniconda3/envs/mgca/bin/cas1_db.*
 
 
 
