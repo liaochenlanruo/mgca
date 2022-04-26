@@ -14,7 +14,7 @@ if ($bin=~/(.+)\/mgca/) {
 }
 
 # Command line options
-my(@Options, $help, $PI, $PROPHAGE, $aa_suffix, $AAsPath, $IS, $gbkPath, $gbk_suffix, $phmms, $min_contig_size, $phage_genes, $scafPath, $scaf_suffix, $threads);
+my(@Options, $help, $PI, $PROPHAGE, $IS, $CRISPR, $aa_suffix, $AAsPath, $gbkPath, $gbk_suffix, $phmms, $min_contig_size, $phage_genes, $scafPath, $scaf_suffix, $casDBpath, $threads);
 setOptions();
 
 # Option setting routines
@@ -29,6 +29,7 @@ sub setOptions {
     {OPT=>"PI",             VAR=>\$PI,                                        DESC=>"Calculate statistics of protein properties and print pI of all protein sequences"},
     {OPT=>"IS",             VAR=>\$IS,                                        DESC=>"Predict genomic island from GenBank files"},
     {OPT=>"PROPHAGE",       VAR=>\$PROPHAGE,                                  DESC=>"Predict prophage sequences from GenBank files"},
+    {OPT=>"CRISPR",         VAR=>\$CRISPR,                                    DESC=>"Finding CRISPR-Cas systems in genomics or metagenomics datasets"},
     "\nParameters of PI",
     {OPT=>"AAsPath=s",      VAR=>\$AAsPath, DEFAULT=>'',                      DESC=>"Amino acids of all strains as fasta file paths"},
     {OPT=>"aa_suffix=s",    VAR=>\$aa_suffix, DEFAULT=>'.faa',                DESC=>"Specify the suffix of Protein sequence files"},
@@ -45,6 +46,8 @@ sub setOptions {
     "\nParameters of CRISPR",
     {OPT=>"scafPath=s",      VAR=>\$scafPath, DEFAULT=>'',                    DESC=>"Genome/Scaffolds/Contigs file path"},
     {OPT=>"scaf_suffix=s",   VAR=>\$scaf_suffix, DEFAULT=>'.fa',              DESC=>"Specify the suffix of Genome/Scaffolds/Contigs files"},
+    {OPT=>"casDBpath=s",     VAR=>\$casDBpath, DEFAULT=>"$mgca_dir",          DESC=>"The full path of cas database, not include the database name and the last '/' of the path"},
+    {OPT=>"threads=i",       VAR=>\$threads, DEFAULT=>'6',                    DESC=>"Number of threads to use"},
   );
   @ARGV or usage(1);
 
@@ -85,6 +88,8 @@ sub usage {
   print "  $EXE --IS --gbkPath <PATH> --gbk_suffix <.gbk>\n";
   print "\n# Module PROPHAGE: Predict prophage sequences from GenBank files\n";
   print "  $EXE --PROPHAGE --gbkPath <PATH> --gbk_suffix <.gbk> --phmms <Path of pVOG.hmm> --phage_genes <1> --min_contig_size <5000> --threads <6>\n";
+  print "\n# Module CRISPR: Finding CRISPR-Cas systems in genomics or metagenomics datasets\n";
+  print "  $EXE --CRISPR --scafPath <PATH> --scaf_suffix <.fa> --casDBpath <db path> --threads <6>\n";
   exit($exitcode);
 }
 
@@ -122,6 +127,20 @@ if ($PROPHAGE) {
 	system("mv *_prophage All.prophages.* $working_dir/Results/PROPHAGE/");
 	chdir $working_dir;
 }
+
+# 
+if ($CRISPR) {
+	system("mkdir -p $working_dir/Results/CRISPR/");
+	chdir $scafPath;
+	my @genome = glob("*$scaf_suffix");
+	foreach  (@genome) {
+		system("run_opfi.py --genome $_ --threads $threads --casDBpath $casDBpath");
+	}
+	system("mv *_intially *_filtered $working_dir/Results/CRISPR/");
+	chdir $working_dir;
+}
+
+
 
 # cp mgca.pl /home/liu/miniconda3/envs/mgca/bin/mgca
 # cp Scripts/pI/print_pI.pl /home/liu/miniconda3/envs/mgca/bin/
