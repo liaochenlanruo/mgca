@@ -26,7 +26,7 @@ def get_options():
                         help='genome file', default='')
 
     parser.add_argument('--casDBpath', action='store',
-                        help='The full path of cas database, not include the database name', default='')
+                        help='The full path of cas database, not include the database name and the last "/" of the path', default='')
 
     parser.add_argument('--threads', action='store',
                         default='6',
@@ -50,7 +50,7 @@ if os.path.exists(output_directory):
 
 os.mkdir(output_directory)
 cas1_db = options.casDBpath + '/cas1_db'
-cas_all_but_1_db = options.casDBpath + 'cas_all_but_1_db'
+cas_all_but_1_db = options.casDBpath + '/cas_all_but_1_db'
 p = Pipeline()
 p.add_seed_step(db=cas1_db, name="cas1", e_val=0.001, blast_type="PROT", num_threads=options.threads)
 p.add_filter_step(db=cas_all_but_1_db, name="cas_all", e_val=0.001, blast_type="PROT", num_threads=options.threads)
