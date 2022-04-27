@@ -13,6 +13,59 @@ Microbial genome component and annotation pipeline
 </center></p>
 -------------
 
+# Introduction
+----
+
+The software was designed to perform the following analysis:
+
+- Genomic Component
+  - HGT
+    - Genomic Island
+    - Prophage
+    - CRISPR/Cas
+  - Non-coding RNA
+    - rRNA
+    - tRNA
+    - sRNA
+  - Repeat Sequences
+    - Tandem Repeats
+    - Interspersed Repeats
+
+- Genomic Attributes
+  - Genome Survey
+  - Protein Properties
+  - WGS-based Species Identify
+
+- Function Annotation
+  - General Annotation
+    - SwissProt
+    - Pfam
+    - GO
+    - KEGG
+  - Target Gene Mining
+    - Effectors
+      - T3SS
+      - T4SS
+      - Secretory\/Membrane\/Intracellular Protein
+      - Secondary Metabolite Biosynthetic Gene Clusters
+    - Virulence\/Pathogenicity\/Resistance Gene
+      - Antibiotic Resistance Genes (ARGs)
+      - Pathogen Host Interactions (PHI)
+      - Comprehensive Antibiotic Resistance Database (CARD)
+    - Element Cycle
+      - CAZyme
+      - Nitrogen
+      - Sulfur
+      - Methane
+    - Membrane Transport Protein (TCDB)
+
+- Comparative Genomics
+  - Collinearity
+  - Positive Selection
+  - SNP
+
+**NOTICE**: It takes a long time to complete the development!
+
 # Installation
 ----
 The software was tested successfully on Windows WSL, Linux x64 platform, and macOS. Because this software relies on a large number of other software, so it is recommended to install with **[Bioconda](https://bioconda.github.io/index.html)**.
@@ -51,12 +104,11 @@ conda deactivate
   - [ggplot2](https://cran.r-project.org/web/packages/ggplot2/)
 - [wget](https://www.gnu.org/software/wget/)
 
-- In future:
+- In the future:
 
 ```tex
     #- gtdbtk
-    #- infernal
-    #- bakta (include trnascan-se)
+    #- bakta (include trnascan-se infernal piler-cr)
     #- repeatmasker (include trf)
     #- mummer4
     #- artemis (include openjdk)
