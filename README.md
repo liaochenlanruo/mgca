@@ -16,13 +16,13 @@ Microbial genome component and annotation pipeline
 # Introduction
 ----
 
-The software was designed to perform the following analysis:
+The software under designing dedicates to perform the following analysis:
 
-- Genomic Component
+- **Genomic Component**
   - HGT
     - Genomic Island
     - Prophage
-    - CRISPR/Cas
+    - CRISPR-Cas
   - Non-coding RNA
     - rRNA
     - tRNA
@@ -31,12 +31,12 @@ The software was designed to perform the following analysis:
     - Tandem Repeats
     - Interspersed Repeats
 
-- Genomic Attributes
+- **Genomic Attributes**
   - Genome Survey
   - Protein Properties
   - WGS-based Species Identify
 
-- Function Annotation
+- **Function Annotation**
   - General Annotation
     - SwissProt
     - Pfam
@@ -46,9 +46,9 @@ The software was designed to perform the following analysis:
     - Effectors
       - T3SS
       - T4SS
-      - Secretory\/Membrane\/Intracellular Protein
+      - Secretory/Membrane/Intracellular Protein
       - Secondary Metabolite Biosynthetic Gene Clusters
-    - Virulence\/Pathogenicity\/Resistance Gene
+    - Virulence/Pathogenicity/Resistance Gene
       - Antibiotic Resistance Genes (ARGs)
       - Pathogen Host Interactions (PHI)
       - Comprehensive Antibiotic Resistance Database (CARD)
@@ -59,12 +59,12 @@ The software was designed to perform the following analysis:
       - Methane
     - Membrane Transport Protein (TCDB)
 
-- Comparative Genomics
+- **Comparative Genomics**
   - Collinearity
   - Positive Selection
   - SNP
 
-**NOTICE**: It takes a long time to complete the development!
+**NOTICE**: It will take a long time to complete the development!
 
 # Installation
 ----
@@ -170,6 +170,33 @@ mgca --PROPHAGE --gbkPath <PATH> --gbk_suffix <.gbk> --phmms <Path of pVOG.hmm> 
 ```bash
 mgca --CRISPR --scafPath <PATH> --scaf_suffix <.fa> --casDBpath <db path> --threads <6>
 ```
+
+# OUTPUT
+
+## PI
+
+- **Results/PI/\*.pepstats**: Peptide statistics for each protein sequence organized by the genome.
+- **Results/PI/\*.pI**: Protein isoelectric point and its frequency.
+- **Results/PI/\*.pI.tiff**: A plot drawing 'Relative frequency' vs. 'isoelectric point'.
+
+## IS
+
+- **Results/IS/All_island.list**: A list file containing genomic island information.
+- **Results/IS/All_island.txt**: A file contains information and sequence of genes in the genomic island.
+
+## PROPHAGE
+
+- **Results/PROPHAGE/\*_prophage**: Result for each genome.
+- **Results/PROPHAGE/All.prophages.txt**: The summary results (for all genomes) include information of prophage on the host genome.
+- **Results/PROPHAGE/All.prophages.seq**: The summary results (for all genomes) include information of prophage genes and sequences.
+
+## CRISPR
+
+- **Results/CRISPR/\*_intially**: Results obtained by permissive BLAST parameters (In most cases, it can be ignored).
+- **Results/CRISPR/\*_filtered**: The results obtained after `*_intially` quality control (The final result).
+- **Results/CRISPR/\*_filtered/\*.csv**: The file contains information of `CRISPR array`
+- **Results/CRISPR/\*_filtered/\*.png**: The visualizations of all predicted `CRISPR array`.
+
 
 # License
 -------
