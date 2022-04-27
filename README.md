@@ -132,7 +132,7 @@ Please report any issues to the [issues page](https://github.com/liaochenlanruo/
 # Citation
 --------
 
-- If you use this software please cite: Hualin Liu. MGCA: microbial genome component and annotation pipeline. Avaliable at GitHub [https://github.com/liaochenlanruo/mgca](https://github.com/liaochenlanruo/mgca)
+If you use this software please cite: Hualin Liu. MGCA: microbial genome component and annotation pipeline. Avaliable at GitHub [https://github.com/liaochenlanruo/mgca](https://github.com/liaochenlanruo/mgca)
 
 # Updates
 -------
