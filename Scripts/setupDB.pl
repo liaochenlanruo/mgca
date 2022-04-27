@@ -81,6 +81,8 @@ if ($all or $pVOG) {
 	system("rm -rf AllvogHMMprofiles AllvogHMMprofiles.tar.gz");
 }
 
+
+=cut
 # Example 1: Finding CRISPR-Cas systems in a cyanobacteria genome
 
 ## Use the makeblastdb utility to convert a Cas protein database to BLAST format
