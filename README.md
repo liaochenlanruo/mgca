@@ -144,14 +144,16 @@ If you use this software please cite: Hualin Liu. MGCA: microbial genome compone
 ------------------------------------------------------------------------
 
 <p><center><strong>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span id="busuanzi_container_site_pv">Total visits: <span id="busuanzi_value_site_pv"></span> times</span>
+<span id="busuanzi_container_site_pv"><i class="fa fa-spinner"></i>Total visits: <span id="busuanzi_value_site_pv"></span> times</span>
 
 <span class="post-meta-divider">|</span>
-<span id="busuanzi_container_site_uv">Visitors: <span id="busuanzi_value_site_uv"></span> people</span>
+<span id="busuanzi_container_site_uv"><i class="fa fa-spinner fa-spin"></i>Visitors: <span id="busuanzi_value_site_uv"></span> people</span>
 
 <span class="post-meta-divider">|</span>
-<span id="busuanzi_container_page_pv">
+<span id="busuanzi_container_page_pv"><i class="fa fa-spinner fa-spin"></i>
 This page: <span id="busuanzi_value_page_pv"></span> times
 </span>
 </strong></center></p>
