@@ -1,8 +1,10 @@
 ![Platform](https://img.shields.io/badge/Platform-WSL%2FLinux%2FmacOS-green) [![License](https://img.shields.io/github/license/liaochenlanruo/mgca)](https://github.com/liaochenlanruo/mgca/blob/master/LICENSE) [![GitHubversion](https://anaconda.org/bioconda/mgca/badges/version.svg)](https://anaconda.org/bioconda/mgca) ![Downloads conda](https://img.shields.io/conda/dn/bioconda/mgca.svg?style=flat) [![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat)](http://bioconda.github.io/recipes/mgca/README.html) [![BIOINFORMATICS](https://pub.idqqimg.com/wpa/images/group.png "945751012")](//shang.qq.com/wpa/qunwpa?idkey=fd4637eecd73bf0a5a8caa274843a07afdf1fbbc40a86630df5d4b029749cc7b)
 
 # MGCA
+
 Microbial genome component and annotation pipeline
-----
+
+-------------
 
 <p><center>
 <div style="display:inline-block;width:200px;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=57lw18tyu78&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script></div>
@@ -53,16 +55,16 @@ conda deactivate
 
 ```tex
     #- gtdbtk
-    #- infernal 1.1.4
+    #- infernal
     #- bakta (include trnascan-se)
-    #- repeatmasker 4.1.2.p1 (include trf)
-    #- mummer4 4.0.0rc1
-    #- artemis 18.2.0 (include openjdk)
-    #- saspector 0.0.5 (include trf progressivemauve prokka)
-    #- lastz 1.04.15
+    #- repeatmasker (include trf)
+    #- mummer4
+    #- artemis (include openjdk)
+    #- saspector (include trf progressivemauve prokka)
+    #- lastz
     #- kakscalculator2
-    #- interproscan 5.54_87.0 (include emboss openjdk)
-    #- eggnog-mapper 2.1.7 (include wget)
+    #- interproscan (include emboss openjdk)
+    #- eggnog-mapper (include wget)
 ```
 
 # Usage
@@ -135,7 +137,7 @@ Please report any issues to the [issues page](https://github.com/liaochenlanruo/
 # Updates
 -------
 
-## - V0.0.0
+## V0.0.0
 
   - The MGCA was born.
 
@@ -148,6 +150,7 @@ Please report any issues to the [issues page](https://github.com/liaochenlanruo/
 <span class="post-meta-divider">|</span>
 <span id="busuanzi_container_site_uv">Visitors: <span id="busuanzi_value_site_uv"></span> people</span>
 
+<span class="post-meta-divider">|</span>
 <span id="busuanzi_container_page_pv">
 This page: <span id="busuanzi_value_page_pv"></span> times
 </span>
