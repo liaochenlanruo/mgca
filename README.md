@@ -218,11 +218,11 @@ Descriptions of each output field are provided below:
 -----------------|----------------------------------------------------------------------------------------------------------------------------------------------------
  Contig          | ID/accession for the parent contig/genome sequence.                                                                                                
  Loc_coordinates | Start and end position of the candidate locus (relative to the parent sequence).                                                                   
- Name            | Feature name/label. This is will be identical to ¡°Description¡± (index 8) if parse_descriptions is True.                                            
+ Name            | Feature name/label. This is will be identical to "Description" (index 8) if parse_descriptions is True.                                            
  Coordinates     | Start and end position of this feature, relative to the parent sequence.                                                                           
  ORFID           | A unique ID given to this feature, primarily for internal use. Only applies to features that are genes.                                            
  Strand          | Specifies if the feature was found in the forward (1) or backward (-1) direction. Only applied to features that are genes.                         
- Accession       | ID/accession for the reference sequence that had the best alignment (by e-value) with this feature¡¯s translated sequence.                          
+ Accession       | ID/accession for the reference sequence that had the best alignment (by e-value) with this feature's translated sequence.                          
  E_val           | The e-value score for the best alignment for this feature.                                                                                         
  Description     | A description of this putative feature, parsed from the defline of best aligned reference sequence.                                                
  Sequence        | The (translated) amino acid sequence for this feature.                                                                                             
@@ -236,7 +236,7 @@ Descriptions of each output field are provided below:
  Gapopen         | The number of gap openings.                                                                                                                        
  Gaps            | Total number of gaps in the alignment.                                                                                                             
  Ppos            | Percentage of positive scoring matches.                                                                                                            
- Qcovhsp         | Query coverage per HSP. That is, the fraction of the query (this feature¡¯s translated amino acid sequence) that was covered in the best alignment. 
+ Qcovhsp         | Query coverage per HSP. That is, the fraction of the query (this feature's translated amino acid sequence) that was covered in the best alignment. 
  Contig_filename | The input data (genomic sequence(s)) file path.                                                                                                    
 
 
