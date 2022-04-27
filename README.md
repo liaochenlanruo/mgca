@@ -2,6 +2,7 @@
 
 # MGCA
 Microbial genome component and annotation pipeline
+----
 
 <p><center>
 <div style="display:inline-block;width:200px;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=57lw18tyu78&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script></div>
@@ -25,6 +26,7 @@ The software was tested successfully on Windows WSL, Linux x64 platform, and mac
 	# Usually specify the latest version of PGCGAP
 	mamba create -n mgca mgca=0.0.0
 	```
+
 ### **Step2: Setup database** (Users should execute this after the first installation of mgca)
 
 ```bash
@@ -32,6 +34,7 @@ conda activate mgca
 setupDB --all
 conda deactivate
 ```
+
 **Notice**: there is a little bug, users can edit the "setupDB" file located at the mgca installation path to resolve the problem. Just remove the lines after line no. 83.
 
 # Required dependencies
@@ -46,6 +49,9 @@ conda deactivate
   - [ggplot2](https://cran.r-project.org/web/packages/ggplot2/)
 - [wget](https://www.gnu.org/software/wget/)
 
+- In future:
+
+```tex
     #- gtdbtk
     #- infernal 1.1.4
     #- bakta (include trnascan-se)
@@ -57,6 +63,7 @@ conda deactivate
     #- kakscalculator2
     #- interproscan 5.54_87.0 (include emboss openjdk)
     #- eggnog-mapper 2.1.7 (include wget)
+```
 
 # Usage
 -----
@@ -137,6 +144,11 @@ Please report any issues to the [issues page](https://github.com/liaochenlanruo/
 <p><center><strong>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="busuanzi_container_site_pv">Total visits: <span id="busuanzi_value_site_pv"></span> times</span>
+
 <span class="post-meta-divider">|</span>
 <span id="busuanzi_container_site_uv">Visitors: <span id="busuanzi_value_site_uv"></span> people</span>
+
+<span id="busuanzi_container_page_pv">
+This page: <span id="busuanzi_value_page_pv"></span> times
+</span>
 </strong></center></p>
