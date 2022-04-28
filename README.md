@@ -94,30 +94,25 @@ conda deactivate
 
 # Required dependencies
 ----
+
+- artemis
+- [bakta](https://github.com/oschwengers/bakta)
+- [eggnog-mapper](https://github.com/eggnogdb/eggnog-mapper)
 - [emboss](http://emboss.open-bio.org/)
+- gtdbtk
+- interproscan (include emboss openjdk)
 - [islandpath](http://www.pathogenomics.sfu.ca/islandpath/)
+- kakscalculator2
+- [lastz](http://www.bx.psu.edu/~rsharris/lastz/)
+- [mummer4](https://mummer4.github.io/)
 - [opfi](https://github.com/wilkelab/Opfi)
 - [Perl](http://www.perl.org/get.html) & the modules
   - [perl-bioperl](http://metacpan.org/pod/BioPerl)
-- phispy 4.2.21
+- [phispy](https://github.com/linsalrob/PhiSpy)
 - [R](https://www.r-project.org/) & the packages
   - [ggplot2](https://cran.r-project.org/web/packages/ggplot2/)
-- [wget](https://www.gnu.org/software/wget/)
-
-- In the future:
-
-```tex
-    #- gtdbtk
-    #- bakta (include trnascan-se infernal piler-cr)
-    #- repeatmasker (include trf)
-    #- mummer4
-    #- artemis (include openjdk)
-    #- saspector (include trf progressivemauve prokka)
-    #- lastz
-    #- kakscalculator2
-    #- interproscan (include emboss openjdk)
-    #- eggnog-mapper (include wget)
-```
+- [repeatmasker](http://www.repeatmasker.org)
+- saspector (include trf progressivemauve prokka)
 
 # Usage
 -----
