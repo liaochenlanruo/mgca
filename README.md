@@ -77,21 +77,3 @@ Please report any issues to the [issues page](https://github.com/liaochenlanruo/
 --------
 
 If you use this software please cite: Hualin Liu. MGCA: microbial genome component and annotation pipeline. Avaliable at GitHub [https://github.com/liaochenlanruo/mgca](https://github.com/liaochenlanruo/mgca)
-
-
-------------------------------------------------------------------------
-
-<p><center><strong>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span id="busuanzi_container_site_pv"><i class="fa fa-spinner fa-spin"></i>Total visits: <span id="busuanzi_value_site_pv"></span> times</span>
-
-<span class="post-meta-divider">|</span>
-<span id="busuanzi_container_site_uv"><i class="fa fa-spinner fa-spin"></i>Visitors: <span id="busuanzi_value_site_uv"></span> people</span>
-
-<span class="post-meta-divider">|</span>
-<span id="busuanzi_container_page_pv"><i class="fa fa-spinner fa-spin"></i>
-This page: <span id="busuanzi_value_page_pv"></span> times
-</span>
-</strong></center></p>
