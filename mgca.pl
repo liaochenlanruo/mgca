@@ -142,28 +142,6 @@ if ($CRISPR) {
 
 
 
-# cp mgca.pl /home/liu/miniconda3/envs/mgca/bin/mgca
-# cp Scripts/pI/print_pI.pl /home/liu/miniconda3/envs/mgca/bin/
-# cp Scripts/pI/plot_pI.R /home/liu/miniconda3/envs/mgca/bin/
-# cp Scripts/IS/run_islandpath.pl /home/liu/miniconda3/envs/mgca/bin/
-# cp Scripts/PROPHAGE/run_PhiSpy.pl /home/liu/miniconda3/envs/mgca/bin/
-# cp Scripts/CRISPR/run_opfi.py /home/liu/miniconda3/envs/mgca/bin/
-# cp Scripts/CRISPR/db/cas_all_* /home/liu/miniconda3/envs/mgca/bin/
-# cp Scripts/CRISPR/db/cas1_db.* /home/liu/miniconda3/envs/mgca/bin/
-
-
-# chmod a+x /home/liu/miniconda3/envs/mgca/bin/mgca
-# chmod a+x /home/liu/miniconda3/envs/mgca/bin/print_pI.pl
-# chmod a+x /home/liu/miniconda3/envs/mgca/bin/plot_pI.R
-# chmod a+x /home/liu/miniconda3/envs/mgca/bin/run_islandpath.pl
-# chmod a+x /home/liu/miniconda3/envs/mgca/bin/run_PhiSpy.pl
-# chmod a+x /home/liu/miniconda3/envs/mgca/bin/run_opfi.py
-# chmod a+x /home/liu/miniconda3/envs/mgca/bin/cas_all_*
-# chmod a+x /home/liu/miniconda3/envs/mgca/bin/cas1_db.*
-
-
-
-
 # ======================== version =============
 sub version {
   print STDERR "$EXE $VERSION\n";

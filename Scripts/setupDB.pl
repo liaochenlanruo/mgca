@@ -81,29 +81,3 @@ if ($all or $pVOG) {
 	system("rm -rf AllvogHMMprofiles AllvogHMMprofiles.tar.gz");
 }
 
-
-=cut
-# Example 1: Finding CRISPR-Cas systems in a cyanobacteria genome
-
-## Use the makeblastdb utility to convert a Cas protein database to BLAST format
-tar zxvf cas_database.tar.gz
-cat cas1.fasta | makeblastdb -dbtype prot -title cas1 -hash_index -out cas1_db
-cat cas[2-9].fasta cas1[0-2].fasta casphi.fasta | makeblastdb -dbtype prot -title cas_all -hash_index -out cas_all_but_1_db
-
-# Use Gene Finder to search for CRISPR-Cas loci
-mkdir example_1_output
-
-## uses Opfi's gene_finder.pipeline module to search for CRISPR-Cas systems
-python run_genefinder.py
-
-## Visualize annotated CRISPR-Cas gene clusters with Operon Analyzer
-python run_OperonAnalyzer.py
-
-# Example 2: Filter and classify CRISPR-Cas systems based on genomic composition
-
-## Make another temporary directory for output
-mkdir example_2_output
-
-## Filter Gene Finder output and extract high-confidence CRISPR-Cas systems
-python run_FilterGeneFinder.py
-

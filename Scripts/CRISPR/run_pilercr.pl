@@ -70,4 +70,7 @@ foreach  (@scaf) {
 	my $out = $1 . "_crispr.txt";
 	my $seq = $1 . "_crispr.seq";
 	system("pilercr -in $_ -out $out -seq $seq -noinfo -minarray $minarray -mincons $mincons -minrepeat $minrepeat -maxrepeat $maxrepeat -minspacer $minspacer -maxspacer $maxspacer -minrepeatratio $minrepeatratio -minspacerratio $minspacerratio");
+	if (-e $seq and -z $seq) {
+		system("rm $out $seq");
+	}
 }
