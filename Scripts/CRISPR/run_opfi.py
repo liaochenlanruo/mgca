@@ -122,6 +122,10 @@ for rs, cas_type in zip(rulesets, cas_types):
                 print(filter_out, "is empty!")
                 os.remove(filter_out)
                 print("The empty file", filter_out, "is removed!")
+                os.rmdir(output_directory2)
+                print("The empty directory", output_directory2, "is removed!")
+                shutil.rmtree(output_directory, ignore_errors=True)
+                print("The directory", output_directory, "is removed!")
             else:
                 print(filter_out, "size is", sz)
                 # read in the output from Gene Finder and create a gene diagram for each cluster (operon)
