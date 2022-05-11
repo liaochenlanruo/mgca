@@ -7,7 +7,7 @@ sort: 999
 
 ![Platform](https://img.shields.io/badge/Platform-WSL%2FLinux%2FmacOS-green) [![License](https://img.shields.io/github/license/liaochenlanruo/mgca)](https://github.com/liaochenlanruo/mgca/blob/master/LICENSE) [![GitHubversion](https://anaconda.org/bioconda/mgca/badges/version.svg)](https://anaconda.org/bioconda/mgca) ![Downloads conda](https://img.shields.io/conda/dn/bioconda/mgca.svg?style=flat) [![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat)](http://bioconda.github.io/recipes/mgca/README.html) [![BIOINFORMATICS](https://pub.idqqimg.com/wpa/images/group.png "945751012")](//shang.qq.com/wpa/qunwpa?idkey=fd4637eecd73bf0a5a8caa274843a07afdf1fbbc40a86630df5d4b029749cc7b)
 
-# MGCA
+## MGCA
 
 Microbial genome component and annotation pipeline
 
@@ -20,7 +20,7 @@ Microbial genome component and annotation pipeline
 </center></p>
 -------------
 
-# Introduction
+## Introduction
 ----
 
 The software under designing dedicates to perform the following analysis:
@@ -73,7 +73,7 @@ The software under designing dedicates to perform the following analysis:
 
 **NOTICE**: It will take a long time to complete the development!
 
-# Installation
+## Installation
 ----
 The software was tested successfully on Windows WSL, Linux x64 platform, and macOS. Because this software relies on a large number of other software, so it is recommended to install with **[Bioconda](https://bioconda.github.io/index.html)**.
 
@@ -99,7 +99,7 @@ conda deactivate
 
 **Notice**: there is a little bug, users can edit the "setupDB" file located at the mgca installation path to resolve the problem. Just remove the lines after line no. 83.
 
-# Required dependencies
+## Required dependencies
 ----
 
 - artemis
@@ -121,7 +121,7 @@ conda deactivate
 - [repeatmasker](http://www.repeatmasker.org)
 - saspector (include trf progressivemauve prokka)
 
-# Usage
+## Usage
 -----
 
 - **Print the help messages:**
@@ -146,36 +146,36 @@ conda deactivate
 
   - **\[\--CRISPR\]** Finding CRISPR-Cas systems in genomics or metagenomics datasets
 
-# Examples
+## Examples
 ----
 
-## **Example 1:** Calculate statistics of protein properties and print pI of all protein sequences
+### **Example 1:** Calculate statistics of protein properties and print pI of all protein sequences
 
 ```bash
 mgca --PI --AAsPath <PATH> --aa_suffix <.faa>
 ```
 
-## **Example 2:** Predict genomic island from GenBank files
+### **Example 2:** Predict genomic island from GenBank files
 
 ```bash
 mgca --IS --gbkPath <PATH> --gbk_suffix <.gbk>
 ```
 
-## **Example 3:** Predict prophage sequences from GenBank files
+### **Example 3:** Predict prophage sequences from GenBank files
 
 ```bash
 mgca --PROPHAGE --gbkPath <PATH> --gbk_suffix <.gbk> --phmms <Path of pVOG.hmm> --phage_genes <1> --min_contig_size <5000> --threads <6>
 ```
 
-## **Example 4:** Finding CRISPR-Cas systems in genomics or metagenomics datasets
+### **Example 4:** Finding CRISPR-Cas systems in genomics or metagenomics datasets
 
 ```bash
 mgca --CRISPR --scafPath <PATH> --scaf_suffix <.fa> --casDBpath <db path> --threads <6>
 ```
 
-# OUTPUT
+## OUTPUT
 
-## PI
+### PI
 
 - **Results/PI/\*.pepstats**: Peptide statistics for each protein sequence organized by the genome.
 - **Results/PI/\*.pI**: Protein isoelectric point and its frequency.
@@ -183,7 +183,7 @@ mgca --CRISPR --scafPath <PATH> --scaf_suffix <.fa> --casDBpath <db path> --thre
 
   ![CRISPR array](https://cdn.jsdelivr.net/gh/liaochenlanruo/cdn@master/images/post/85d7_2.jpg)
 
-## IS
+### IS
 
 - **Results/IS/All_island.list**: A list file containing genomic island information.
 
@@ -203,7 +203,7 @@ mgca --CRISPR --scafPath <PATH> --scaf_suffix <.fa> --casDBpath <db path> --thre
 | LHL010_Scaffold2 | islandpath | genomic_island | 404015 | 531251 | . | - | . | ID=LHL010_Scaffold2_gi1 | LHL010_01515 | 404545 | 405681 | -1 | putative zinc-binding alcohol dehydrogenase | MKAVTYQGIKNVVVKDVPDPKIEKSDDMIIKVTSTAICGSDLHLIHGFIPNLQEDYVIGHEPMGIVEEVGPGVTKVKKGDRVIIPFTIACGECFFCKNQLESQCDQSNENGEMGAYFGYSGQTGGYPGGQAEYLRVPFANFTHFKIPESCEEPDEKLSVIADAMTTGFWSVDNAGVKEGDTVIVLGCGPVGLFAQKFCWLKGAKRVIAVDYVNYRLQHAKRTNKVEIVNFEDHENTGNYLKEITKGGADVVIDAVGMDGKMSDLEFLASGLKLHGGTMSALVIASQAVRKGGTIQITGVYGGRYNGFPLGDIMQRNINIRSGQAPVIHYMPYMFELVSTGKIDPGDVVSHVLPLSEAKHGYDIFDAKMDDCIKVVLKP |
 
 
-## PROPHAGE
+### PROPHAGE
 
 - **Results/PROPHAGE/\*_prophage**: Result for each genome.
 - **Results/PROPHAGE/All.prophages.txt**: The summary results (for all genomes) include information of prophage on the host genome.
@@ -229,7 +229,7 @@ mgca --CRISPR --scafPath <PATH> --scaf_suffix <.fa> --casDBpath <db path> --thre
 | F06_bin.1 | pp1 | NODE_1250 | 5205 | 5636 | -1 | 5-keto-L-gluconate epimerase | MKLSIVLSTQPAQFEAIAFKGGFERNVARIAELGYDGVELAIRDPNLVDANGMLRVVSAHGLEVPAIGTGQAWGEEGLSFTDPDRAIRAAAIERTKSHIPFATRTGAACGEHGRTVIIIGLLRGIVKPGVDHAQAMDWLVDAL |
 | F06_bin.1 | pp1 | NODE_1250 | 5709 | 6260 | -1 | hypothetical protein | MVLETGKGQGVDQALAEATGGCLQLKVSGIYQEILWRVLAESPDPAERALFEKAWAHTYRIAETLSRVYVALIAGRDQAEAQALLADESRVGKVAGREAIALVKQTLGYGLHQAALAHDLLGVADSSHRHPADDFFRHLSYLAFRPLRAELYRTITPDGWQHYADAVTRYTRMRIAGLGMTED |
 
-## CRISPR
+### CRISPR
 
 - **Results/CRISPR/\*_intially**: Results obtained by permissive BLAST parameters (In most cases, it can be ignored).
 - **Results/CRISPR/\*_filtered**: The results obtained after `*_intially` quality control (The final result).
@@ -249,7 +249,7 @@ mgca --CRISPR --scafPath <PATH> --scaf_suffix <.fa> --casDBpath <db path> --thre
 | 3 | 338499..363015 | CRISPR array | 353308..354476 |  |  |  |  | Copies: 20, Repeat: 28, Spacer: 32 | TTTCTAAGCTGCCTATACGGCAGTGAAC | Contig.fasta |  |  |  |  |  |  |  |  |  |  |  |
 
 
-Descriptions of each output field are provided below:
+**Descriptions of each output field are provided below:**
 
  **Field name**  | **Description**                                                                                                                                    
 -----------------|----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -282,25 +282,25 @@ Descriptions of each output field are provided below:
   ![CRISPR array](https://cdn.jsdelivr.net/gh/liaochenlanruo/cdn@master/images/post/mgca_1.png)
 
 
-# License
+## License
 -------
 
 MGCA is free software, licensed under GPLv3.
 
-# Feedback and Issues
+## Feedback and Issues
 -------------------
 
 Please report any issues to the [issues page](https://github.com/liaochenlanruo/mgca/issues?_blank) or email us at <liaochenlanruo@webmail.hzau.edu.cn>.
 
-# Citation
+## Citation
 --------
 
 If you use this software please cite: Hualin Liu. MGCA: microbial genome component and annotation pipeline. Avaliable at GitHub [https://github.com/liaochenlanruo/mgca](https://github.com/liaochenlanruo/mgca)
 
-# Updates
+## Updates
 -------
 
-## V0.0.0
+### V0.0.0
 
   - The MGCA was born.
 
